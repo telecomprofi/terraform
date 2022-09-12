@@ -11,6 +11,13 @@
 
 ### [On using dynamic in terraform script or module](https://www.terraform.io/docs/language/expressions/dynamic-blocks.html)
 ### [more on dynamic](https://lgallardo.com/2019/06/14/dynamic-blocks-in-terraform-0.12.x/#:~:text=Terraform%200.12.x%20proposes%20dynamic%20blocks%20to%20solve%20this,function%20doesn%E2%80%99t%20find%20the%20index%20on%20the%20map.) 
+### [Difference between Map and Object and map of objects in terraform](https://yellowdesert.consulting/2021/05/31/terraform-map-and-object-patterns/)
+### gist of the above 
+'''
+"Here’s the main detail you need:
+
+Maps contain many things of one type. Objects contain a specific set of things of many types."
+'''
 
 ### [On using terragrunt with modules to make them DRY](https://www.youtube.com/watch?v=LVgP63BkhKQ)
 
