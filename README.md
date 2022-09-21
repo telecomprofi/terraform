@@ -1,6 +1,9 @@
 # terraform 101
 
 ## Intro articles
+### [terraform on GCP](https://github.com/telecomprofi/terraform/blob/master/terraform_gcp)
+### [terraform on AWS](<tba>)
+
 ## Modules
 ### [On writing terraform modules]( https://learn.hashicorp.com/tutorials/terraform/pattern-module-creation?in=terraform/modules )
 ### [on using modules from registry](https://learn.hashicorp.com/tutorials/terraform/module-use)
