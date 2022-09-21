@@ -1,0 +1,27 @@
+# Working with IaC terrafrom for Google Cloud Platform
+
+### [Getting started with terafrom on GCP (author: Google)](https://cloud.google.com/docs/terraform)
+
+### Credentials (Service Accounts vs manual authentication)
+aka How to terraform on GCP without service account/[credentials](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started#adding-credentials)
+Best practice for working with IaC on GCP is to use Service Account - as opposed to human account which may require MFA, manual confirmation etc and is not really designed for automation pipeline.
+
+But to create such Service Account one needs following permissions:
+serviceAccounts.setIamPolicy  and 'Service Account Token Creator' Role has to be applied to service account. See details here and here.
+
+If you have no above permissions, below is manual workaround.
+
+For non-pipeline deployment of terraform code to GCP instead of service account  key file (json format) following manual workaround could be used:   
+
+Comment out line in provider resource:
+
+provider "google" {
+    credentials = file(~/gcp_key.json) <- comment out this line
+
+2. then from cli on desktop:
+
+gcloud auth application-default login --project <project-name>
+
+After that browser window with Google Auth will be open and after manual login temporary token will be created with your account’s credentials that could be used in terraform instead of ‘credentials’ line of code.
+
+### [Terraform best practices on Google Cloud](https://cloud.google.com/docs/terraform/best-practices-for-terraform)
